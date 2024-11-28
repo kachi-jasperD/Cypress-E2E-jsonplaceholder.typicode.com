@@ -24,7 +24,7 @@ jobs:
       - name: Run Cypress regression tests
         uses: cypress-io/github-action@v6
         with: 
-          command: npm run regression-pack-headed
+          command: npm run only-regression-test
 
   cypress-smoke-test-run:
     runs-on: ubuntu-latest
@@ -45,7 +45,5 @@ jobs:
       # Run smoke tests
       - name: Run Cypress smoke tests
         uses: cypress-io/github-action@v6
-        with:
-          spec: "cypress/integration/smoke-pack/*.spec.js" # Optional: Point to specific specs
-          browser: chrome
-          headed: true
+        with: 
+          command: npm run only-regression-test

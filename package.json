@@ -5,10 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "smoke-pack-headed": "cypress run -e TAGS=\"@smoke\"",
-    "regression-pack-headed": "cypress run -e TAGS=\"@regression and not @smoke\" --headed && node cucumber-html-report.js"
-  
-  },
+    "smoke-pack-headed": "cypress run -e TAGS=\"@smoke\" --headed && node cucumber-html-report.js",
+    "regression-pack-headed": "cypress run -e TAGS=\"@regression and not @smoke\" --headed && node cucumber-html-report.js",
+    "only-smoke-test": "npx cypress run -e TAGS=\"@smoke\"",
+    "only-regression-test": "npx cypress run -e TAGS=\"@regression\""
+    },
   "author": "",
   "license": "ISC",
   "devDependencies": {
