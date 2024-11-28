@@ -13,7 +13,7 @@ export default defineConfig({
   },
   
   e2e: {
-    specPattern: "**/*.feature",
+    specPattern: "cypress/e2e/**/*.feature",
     async setupNodeEvents(
       on: Cypress.PluginEvents,
       config: Cypress.PluginConfigOptions
@@ -32,7 +32,7 @@ export default defineConfig({
       return config;
     },
     env: {
-      TAGS: process.env.TAGS || '', // Use environment variable for TAGS
+      TAGS: process.env.TAGS || "", // Use environment variable for TAGS
     },
   },
 });
