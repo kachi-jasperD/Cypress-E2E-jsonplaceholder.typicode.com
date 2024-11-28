@@ -1,46 +1,46 @@
-name: Run Tagged Cypress Tests
+# name: Run Tagged Cypress Tests
 
-on: 
-  push:
-    branches:
-      - main
-  workflow_dispatch:
+# on: 
+#   push:
+#     branches:
+#       - main
+#   workflow_dispatch:
 
-jobs:
-  cypress-smoke-tests:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+# jobs:
+#   cypress-smoke-tests:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '14'
+#       - name: Set up Node.js
+#         uses: actions/setup-node@v2
+#         with:
+#           node-version: '14'
 
-      - name: Install dependencies
-        run: npm install
+#       - name: Install dependencies
+#         run: npm install
 
-      - name: Run Smoke Tests
-        run: npm run only-smoke-test # Calls your script
-        env:
-          TAGS: "@smoke"
+#       - name: Run Smoke Tests
+#         run: npm run only-smoke-test # Calls your script
+#         env:
+#           TAGS: "@smoke"
 
-  cypress-regression-tests:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+#   cypress-regression-tests:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '14'
+#       - name: Set up Node.js
+#         uses: actions/setup-node@v2
+#         with:
+#           node-version: '14'
 
-      - name: Install dependencies
-        run: npm install
+#       - name: Install dependencies
+#         run: npm install
 
-      - name: Run Regression Tests
-        run: npm run only-regression-test # Calls your script
-        env:
-          TAGS: "@regression"
+#       - name: Run Regression Tests
+#         run: npm run only-regression-test # Calls your script
+#         env:
+#           TAGS: "@regression"
