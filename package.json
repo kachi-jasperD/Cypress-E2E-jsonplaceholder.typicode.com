@@ -4,7 +4,9 @@
   "description": "Cypress Cucumber API Automation",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "smoke-pack-headed": "cypress run -e TAGS=\"@smoke\" --headed && node cucumber-html-report.js",
+    "regression-pack-headed": "cypress run -e TAGS=\"@regression and not @smoke\" --headed && node cucumber-html-report.js"
   },
   "author": "",
   "license": "ISC",
@@ -12,6 +14,7 @@
     "@badeball/cypress-cucumber-preprocessor": "^21.0.3",
     "@bahmutov/cypress-esbuild-preprocessor": "^2.2.3",
     "cypress": "^12.14.0",
+    "cypress-mochawesome-reporter": "^3.8.2",
     "ts-loader": "^9.5.1"
   },
   "cypress-cucumber-preprocessor": {

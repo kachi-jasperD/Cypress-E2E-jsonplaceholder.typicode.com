@@ -33,6 +33,11 @@ To start the tests, run the following command in root terminal:
 
    `npx cypress open`
 
+Or run specific test using tags with:
+
+   `npm run <TAG_NAME>`
+     > Note: If you run this command, you will receive the reports.
+
 Click on the feature file[Resources.feature] to run the test.
 
 ## Screenshot of Passed Test

@@ -9,3 +9,5 @@ cypress/screenshots
 cypress/downloads
 
 package-lock.json
+
+cypress/reports
