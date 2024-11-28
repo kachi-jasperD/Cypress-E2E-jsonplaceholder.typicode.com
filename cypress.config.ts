@@ -31,5 +31,8 @@ export default defineConfig({
       // Make sure to return the config object as it might have been modified by the plugin.
       return config;
     },
+    env: {
+      TAGS: process.env.TAGS || '', // Use environment variable for TAGS
+    },
   },
 });
