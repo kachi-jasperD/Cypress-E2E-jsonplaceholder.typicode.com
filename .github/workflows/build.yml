@@ -1,24 +1,44 @@
-name: All End-to-end tests
-on: push
-jobs:
-  cypress-regression-test-run:
-    runs-on: ubuntu-22.04
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      # Install npm dependencies, cache them correctly
-      # and run all Cypress tests
-      - name: Cypress run
-        uses: cypress-io/github-action@v6
-        with: 
-        command: npm run regression-pack-headed
+# name: All End-to-end tests
+# on: push
+# jobs:
+#   cypress-regression-test-run:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v4
+#       # Install npm dependencies, cache them correctly
+#       # and run all Cypress tests
+      
+#     - name: Set up Node.js
+#       uses: actions/setup-node@v2
+#       with:
+#         node-version: '14'
+
+#     - name: Install dependencies
+#       run: npm install
+
+#     - name: Cypress run
+#       uses: cypress-io/github-action@v6
+#       with: 
+#         command: npm run regression-pack-headed
   
-  cypress-smoke-test-run:
-    runs-on: ubuntu-22.04
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4s
-      - name: Cypress run
-        uses: cypress-io/github-action@v6
-        with: 
-        command: npm run smoke-pack-headed
+#   cypress-smoke-test-run:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v4
+#       # Install npm dependencies, cache them correctly
+#       # and run all Cypress tests
+      
+#     - name: Set up Node.js
+#       uses: actions/setup-node@v2
+#       with:
+#         node-version: '14'
+
+#     - name: Install dependencies
+#       run: npm install
+
+#     - name: Cypress run
+#       uses: cypress-io/github-action@v6
+#       with: 
+#         command: npm run smoke-pack-headed

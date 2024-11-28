@@ -1,0 +1,53 @@
+name: All End-to-End Tests
+
+on:
+  push:
+
+jobs:
+  cypress-regression-test-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Set up Node.js environment
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      # Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Run regression tests
+      - name: Run Cypress regression tests
+        uses: cypress-io/github-action@v6
+        with:
+          spec: "cypress/integration/regression-pack/*.spec.js" # Optional: Point to specific specs
+          browser: chrome
+          headed: true
+
+  cypress-smoke-test-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Set up Node.js environment
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      # Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Run smoke tests
+      - name: Run Cypress smoke tests
+        uses: cypress-io/github-action@v6
+        with:
+          spec: "cypress/integration/smoke-pack/*.spec.js" # Optional: Point to specific specs
+          browser: chrome
+          headed: true
