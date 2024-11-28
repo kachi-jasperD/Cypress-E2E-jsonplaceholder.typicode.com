@@ -10,21 +10,16 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # Set up Node.js environment
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: '14'
+          node-version: '16' # Upgrade to Node.js 16 for compatibility
 
-      # Install dependencies
       - name: Install dependencies
         run: npm install
 
-      # Run regression tests
       - name: Run Cypress regression tests
-        uses: cypress-io/github-action@v6
-        with: 
-          command: npm run smoke-pack-headed
+        run: npm run regression-pack-headed # Run regression tests
 
   cypress-smoke-test-run:
     runs-on: ubuntu-latest
@@ -32,18 +27,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # Set up Node.js environment
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: '14'
+          node-version: '16'
 
-      # Install dependencies
       - name: Install dependencies
         run: npm install
 
-      # Run smoke tests
       - name: Run Cypress smoke tests
-        uses: cypress-io/github-action@v6
-        with: 
-          command: npm run regression-pack-headed
+        run: npm run smoke-pack-headed # Run smoke tests
