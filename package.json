@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "smoke-pack-headed": "cypress run -e TAGS=\"@smoke\" --headed",
-    "regression-pack-headed": "cypress run -e TAGS=\"@regression and not @smoke\" --headed",
+    "regression-pack-headed": "cypress run -e TAGS=\"@regression and not @smoke\" --headed"
   },
   "author": "",
   "license": "ISC",
