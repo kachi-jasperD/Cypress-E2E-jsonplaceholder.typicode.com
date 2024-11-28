@@ -23,10 +23,8 @@ jobs:
       # Run regression tests
       - name: Run Cypress regression tests
         uses: cypress-io/github-action@v6
-        with:
-          spec: "cypress/integration/regression-pack/*.spec.js" # Optional: Point to specific specs
-          browser: chrome
-          headed: true
+        with: 
+          command: npm run regression-pack-headed
 
   cypress-smoke-test-run:
     runs-on: ubuntu-latest
