@@ -13,7 +13,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16' # Upgrade to Node.js 16 for compatibility
+          node-version: '16' # Upgraded to Node.js 16 for compatibility
 
       - name: Install dependencies
         run: npm install
